@@ -2,7 +2,7 @@
 Meet *chunky*, the coolest text chunking API you'll ever use.
 
 ## Overview
-TODO
+*chunky* is a proof-of-concept application designed to demonstrate the process of text chunking for Retrieval-Augmented Generation (RAG) models using vector search technologies. The primary objective of *chunky* is to provide a simple API endpoint that allows users to upload a PDF file, from which the application will extract, clean, and chunk the text into smaller, more optimal pieces.
 
 ## Endpoints
 
