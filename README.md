@@ -38,7 +38,7 @@ Meet *chunky*, the coolest text chunking API you'll ever use.
 ### On your machine
 Create conda environment:
   ```bash
-  conda env create --file=environments.yml
+  conda env create --file=environment.yml
   ```
 
 Activate conda environment:
