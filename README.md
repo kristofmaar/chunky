@@ -1,5 +1,5 @@
-# Chunky
-Meet Chunky, the coolest text chunking API you'll ever use.
+# chunky
+Meet *chunky*, the coolest text chunking API you'll ever use.
 
 ## Overview
 TODO
