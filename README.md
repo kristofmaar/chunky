@@ -60,15 +60,23 @@ curl -X POST "http://localhost:8000/upload" -H "accept: application/json" -H "Co
 ```
 
 ## Sources
+### Blog posts
 - https://unstructured.io/blog/chunking-for-rag-best-practices
 - https://www.pinecone.io/learn/chunking-strategies
 - https://pub.towardsai.net/how-to-optimize-chunk-sizes-for-rag-in-production-fae9019796b6
 - https://towardsdatascience.com/how-to-chunk-text-data-a-comparative-analysis-3858c4a0997a
+- https://www.restack.io/p/text-chunking-answer-spacy-semantic-chunking-cat-ai
+
+### Forum posts
 - https://www.reddit.com/r/LocalLLaMA/comments/15f0b24/open_source_options_for_better_chunking/
 - https://www.reddit.com/r/LangChain/comments/16bjj6w/what_is_optimal_chunk_size/
 - https://www.reddit.com/r/LangChain/comments/16m73j4/comment/k17vcki/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
+
+### Code examples
+- https://github.com/topics/chunking
 - https://github.com/Azure-Samples/azure-search-openai-demo/blob/main/app/backend/prepdocs.py
-- https://www.restack.io/p/text-chunking-answer-spacy-semantic-chunking-cat-ai
+
+### Research papers
 - **[Improving Retrieval for RAG based Question Answering Models on Financial Documents](https://arxiv.org/abs/2404.07221)**  
   *Spurthi Setty, Harsh Thakkar, Alyssa Lee, Eden Chung, Natan Vidra*  
   *arXiv preprint, 2024*.  
