@@ -5,8 +5,8 @@ from chunky import Chunky
 
 app = FastAPI()
 
-@app.post("/upload")
-async def upload_pdf(file: UploadFile = File(...)):
+@app.post("/chunk")
+async def chunk_pdf(file: UploadFile = File(...)):
     if file.content_type != "application/pdf":
         raise HTTPException(status_code=400, detail="Invalid file type. Please upload a PDF file.")
 

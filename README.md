@@ -6,10 +6,8 @@ Meet *chunky*, the coolest text chunking API you'll ever use.
 
 ## Endpoints
 
-### Upload PDF
-
 <details>
-  <summary><code>POST</code> <code><b>/upload</b></code> <code>(Uploads a PDF file, extracts text from it, cleans the text, and chunks it into smaller pieces)</code></summary>
+  <summary><code>POST</code> <code><b>/chunk</b></code> <code>(Uploads a PDF file, extracts text from it, cleans the text, and chunks it into smaller pieces)</code></summary>
 
 ##### Parameters
 
@@ -28,7 +26,7 @@ Meet *chunky*, the coolest text chunking API you'll ever use.
 ##### Example cURL
 
 > ```bash
-> curl -X POST "http://localhost:8000/upload" -H "accept: application/json" -H "Content-Type: multipart/form-data" -F "file=@path/to/your/file.pdf"
+> curl -X POST "http://localhost:8000/chunk" -H "accept: application/json" -H "Content-Type: multipart/form-data" -F "file=@path/to/your/file.pdf"
 > ```
 
 </details>
