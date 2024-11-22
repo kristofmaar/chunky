@@ -9,4 +9,4 @@ dependencies:
       - fastapi
       - uvicorn
       - PyPDF2
-      - pysbd
+      - langchain
