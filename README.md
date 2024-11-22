@@ -60,6 +60,7 @@ curl -X POST "http://localhost:8000/upload" -H "accept: application/json" -H "Co
 ```
 
 ## Sources
+
 ### Blog posts
 - https://unstructured.io/blog/chunking-for-rag-best-practices
 - https://www.pinecone.io/learn/chunking-strategies
