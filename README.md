@@ -77,7 +77,7 @@ I had to skip most of the **semantic chunking** methods because of the limitatio
 
 The plots about the distribution of chunk lengths in the Juypter Notebook supports this, therefore I sticked with recursive chunking.
 
-### Chunk size as overlap
+### Chunk size and overlap
 The research materials almost uniformly stated that for a vector embedding use-case a chunk size of 500-1000 and an overlap of 10% of the chunk size could work the most optimal - of course depending on the type of the documents and the embedding model. Therefore, I choose **1024** (which is a power of 2) as the chunk size, and the overlap of **100** as a general solution.
 
 ## Sources
