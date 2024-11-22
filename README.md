@@ -71,9 +71,7 @@ curl -X POST "http://localhost:8000/upload" -H "accept: application/json" -H "Co
   *Spurthi Setty, Harsh Thakkar, Alyssa Lee, Eden Chung, Natan Vidra*  
   *arXiv preprint, 2024*.  
   [arXiv:2404.07221](https://arxiv.org/abs/2404.07221)  
-  **Abstract**: This paper discusses advanced chunking techniques, query expansion, and metadata integration to enhance retrieval quality for question-answering models in RAG systems.
 - **[Question-Based Retrieval using Atomic Units for Enterprise RAG](https://arxiv.org/abs/2405.12363)**  
   *Vatsal Raina and Mark Gales*  
   *arXiv preprint, 2024*.  
   [arXiv:2405.12363](https://arxiv.org/abs/2405.12363)  
-  **Abstract**: This paper introduces a method that decomposes text into atomic statements and generates synthetic questions to improve chunk retrieval accuracy in enterprise RAG applications.
