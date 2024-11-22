@@ -61,12 +61,13 @@ curl -X POST "http://localhost:8000/upload" -H "accept: application/json" -H "Co
 
 ## Sources
 
-### Blog posts
+### Blog posts, articles
 - https://unstructured.io/blog/chunking-for-rag-best-practices
 - https://www.pinecone.io/learn/chunking-strategies
 - https://pub.towardsai.net/how-to-optimize-chunk-sizes-for-rag-in-production-fae9019796b6
 - https://towardsdatascience.com/how-to-chunk-text-data-a-comparative-analysis-3858c4a0997a
 - https://www.restack.io/p/text-chunking-answer-spacy-semantic-chunking-cat-ai
+- https://www.llamaindex.ai/blog/evaluating-the-ideal-chunk-size-for-a-rag-system-using-llamaindex-6207e5d3fec5
 
 ### Forum posts
 - https://www.reddit.com/r/LocalLLaMA/comments/15f0b24/open_source_options_for_better_chunking/
