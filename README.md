@@ -2,14 +2,12 @@
 Meet *chunky*, the coolest text chunking API you'll ever use.
 
 ## Overview
-TODO
+*chunky* is a proof-of-concept application designed to demonstrate the process of text chunking for Retrieval-Augmented Generation (RAG) models using vector search technologies. The primary objective of *chunky* is to provide a simple API endpoint that allows users to upload a PDF file, from which the application will extract, clean, and chunk the text into smaller, more optimal pieces.
 
 ## Endpoints
 
-### Upload PDF
-
 <details>
-  <summary><code>POST</code> <code><b>/upload</b></code> <code>(Uploads a PDF file, extracts text from it, cleans the text, and chunks it into smaller pieces)</code></summary>
+  <summary><code>POST</code> <code><b>/chunk</b></code> <code>(Uploads a PDF file, extracts text from it, cleans the text, and chunks it into smaller pieces)</code></summary>
 
 ##### Parameters
 
@@ -28,16 +26,59 @@ TODO
 ##### Example cURL
 
 > ```bash
-> curl -X POST "http://localhost:8000/upload" -H "accept: application/json" -H "Content-Type: multipart/form-data" -F "file=@path/to/your/file.pdf"
+> curl -X POST "http://localhost:8000/chunk" -H "accept: application/json" -H "Content-Type: multipart/form-data" -F "file=@path/to/your/file.pdf"
 > ```
 
 </details>
 
-## Running the API
+## Running the application
 
+### On your machine
+Create conda environment:
+  ```bash
+  conda env create --file=environment.yml
+  ```
+
+Activate conda environment:
+  ```bash
+  conda activate chunky
+  ```
+
+Run the FastAPI application:
+  ```bash
+  uvicorn app:app
+  ```
+
+### Using Docker
+
+Build the Docker image:
 ```bash
-uvicorn app:app
+docker build -t chunky:latest .
 ```
+
+Run the Docker container:
+```bash
+docker run -d -p 8000:8000 chunky:latest
+```
+
+## Design choices
+
+### Text cleaning
+Based on the articles on Medium and Spotintelligence, I've implemented some basic text cleaning strategies like white space removal, non-printable characters removal, and multiple spaces removal. I've avoided more advanced techniques to maintain text consistency for the chunking.
+
+### Choosing the chunking strategy
+Mainly the articles of unstructured.io and Pinecone, the Reddit comments, and first cited paper infunced my decisions about choosing the chunking strategy and parameters.
+
+The **fixed-size, character-based chunking** would have been too simplistic for the use case, since it might split text in the middle of sentences or important semantic units, leading to chunks that are not meaningful or useful for downstream tasks.
+
+I had to skip most of the **semantic chunking** methods because of the limitation about using LLM's or any Transformer based models. Even though I've found and tested semantic chunking methods/libraries (e.g. NLTK/textsplit/PySBD), they didn't seem to split text as uniformly as recursive chunking.
+
+**Recursive chunking** seemed to perform the best, since it allows for more control over the chunk sizes and ensures that the chunks are semantically meaningful: by recursively splitting the text based on predefined rules (e.g., sentence boundaries, paragraph breaks), we can achieve a balance between chunk size and semantic coherence. This is crucial for text embedding models.
+
+The plots about the distribution of chunk lengths in the Juypter Notebook supports this, therefore I sticked with recursive chunking.
+
+### Chunk size as overlap
+The research materials almost uniformly stated that for a vector embedding use-case a chunk size of 500-1000 and an overlap of 10% of the chunk size could work the most optimal - of course depending on the type of the documents and the embedding model. Therefore, I choose **1024** (which is a power of 2) as the chunk size, and the overlap of **100** as a general solution.
 
 ## Sources
 
