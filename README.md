@@ -70,6 +70,7 @@ curl -X POST "http://localhost:8000/upload" -H "accept: application/json" -H "Co
 - https://www.llamaindex.ai/blog/evaluating-the-ideal-chunk-size-for-a-rag-system-using-llamaindex-6207e5d3fec5
 - https://www.kaggle.com/discussions/general/503436
 - https://medium.com/@datascientist_SheezaShabbir/text-cleaning-in-nlp-libraries-techniques-and-how-to-get-started-8c7c7e8ba7cf
+- https://spotintelligence.com/2023/09/18/top-20-essential-text-cleaning-techniques-practical-how-to-guide-in-python/
 
 ### Forum posts
 - https://www.reddit.com/r/LocalLLaMA/comments/15f0b24/open_source_options_for_better_chunking/
