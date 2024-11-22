@@ -59,7 +59,7 @@ uvicorn app:app
 
 ### Code examples
 - https://github.com/topics/chunking
-- https://github.com/Azure-Samples/azure-search-openai-demo/blob/main/app/backend/prepdocs.py
+- https://github.com/Azure-Samples/azure-search-openai-demo/blob/main/app/backend/prepdocslib/textsplitter.py
 
 ### Research papers
 - **[Improving Retrieval for RAG based Question Answering Models on Financial Documents](https://arxiv.org/abs/2404.07221)**  
