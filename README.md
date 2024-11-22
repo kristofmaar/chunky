@@ -8,65 +8,41 @@ TODO
 
 ### Upload PDF
 
-#### URL
-`POST /upload`
+<details>
+  <summary><code>POST</code> <code><b>/upload</b></code> <code>(Uploads a PDF file, extracts text from it, cleans the text, and chunks it into smaller pieces)</code></summary>
 
-#### Description
-Uploads a PDF file, extracts text from it, cleans the text, and chunks it into smaller pieces.
+##### Parameters
 
-#### Request
-- **Content-Type**: `multipart/form-data`
-- **Parameters**:
-  - `file` (required): The PDF file to be uploaded.
+> | name      |  type     | data type               | description                                                           |
+> |-----------|-----------|-------------------------|-----------------------------------------------------------------------|
+> | `file`    |  required | file                    | The PDF file to be uploaded                                           |
 
-#### Responses
+##### Responses
 
-- **200 OK**
-  - **Content-Type**: `application/json`
-  - **Body**:
-    ```json
-    {
-      "chunks": [
-        "chunk1",
-        "chunk2",
-        ...
-      ]
-    }
-    ```
+> | http code     | content-type                      | response                                                            |
+> |---------------|-----------------------------------|---------------------------------------------------------------------|
+> | `200`         | `application/json`                | `{"chunks": ["chunk1", "chunk2", ...]}`                             |
+> | `400`         | `application/json`                | `{"detail": "Invalid file type. Please upload a PDF file."}`        |
+> | `500`         | `application/json`                | `{"detail": "An error occurred: {error_message}"}`                  |
 
-- **400 Bad Request**
-  - **Content-Type**: `application/json`
-  - **Body**:
-    ```json
-    {
-      "detail": "Invalid file type. Please upload a PDF file."
-    }
-    ```
+##### Example cURL
 
-- **500 Internal Server Error**
-  - **Content-Type**: `application/json`
-  - **Body**:
-    ```json
-    {
-      "detail": "An error occurred: {error_message}"
-    }
-    ```
+> ```bash
+> curl -X POST "http://localhost:8000/upload" -H "accept: application/json" -H "Content-Type: multipart/form-data" -F "file=@path/to/your/file.pdf"
+> ```
+
+</details>
 
 ## Example usage
 
-### Running the api
-```
-uvicorn app:app
-```
-
-### Request
+### Running the API
 ```bash
-curl -X POST "http://localhost:8000/upload" -H "accept: application/json" -H "Content-Type: multipart/form-data" -F "file=@path/to/your/file.pdf"
+uvicorn app:app
 ```
 
 ## Sources
 
-### Blog posts, articles
+### Blog posts, articles
 - https://unstructured.io/blog/chunking-for-rag-best-practices
 - https://www.pinecone.io/learn/chunking-strategies
 - https://pub.towardsai.net/how-to-optimize-chunk-sizes-for-rag-in-production-fae9019796b6
