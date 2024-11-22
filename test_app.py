@@ -22,7 +22,7 @@ class TestUploadPDF(unittest.TestCase):
         self.assertEqual(response.json(), {"detail": "Invalid file type. Please upload a PDF file."})
 
     def test_upload_pdf_exception(self):
-        with open("test_documents/test_wrong.pdf", "rb") as pdf_file:
+        with open("test_documents/invalid_pdf.pdf", "rb") as pdf_file:
             files = {"file": ("test_wrong.pdf", pdf_file, "application/pdf")}
             response = requests.post(f"{BASE_URL}/upload", files=files)
 
