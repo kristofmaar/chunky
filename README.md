@@ -33,8 +33,18 @@ Meet *chunky*, the coolest text chunking API you'll ever use.
 
 </details>
 
-## Running the API
+## Running the endpoint
 
+#### Create conda environment:
+```bash
+conda env create  --file=environments.yml
+```
+#### Activate conda environment:
+```bash
+conda activate chunky
+```
+
+#### Start the FastAPI application:
 ```bash
 uvicorn app:app
 ```
