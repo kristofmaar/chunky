@@ -52,7 +52,7 @@ Uploads a PDF file, extracts text from it, cleans the text, and chunks it into s
     }
     ```
 
-## Example
+## Example usage
 
 ### Request
 ```bash
