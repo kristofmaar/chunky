@@ -33,9 +33,8 @@ TODO
 
 </details>
 
-## Example usage
+## Running the API
 
-### Running the API
 ```bash
 uvicorn app:app
 ```
