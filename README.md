@@ -36,28 +36,29 @@ Meet *chunky*, the coolest text chunking API you'll ever use.
 ## Running the endpoint
 
 ### On your machine
-#### Create conda environment:
-```bash
-conda env create  --file=environments.yml
-```
-#### Activate conda environment:
-```bash
-conda activate chunky
-```
+Create conda environment:
+  ```bash
+  conda env create --file=environments.yml
+  ```
 
-#### Start the FastAPI application:
-```bash
-uvicorn app:app
-```
+Activate conda environment:
+  ```bash
+  conda activate chunky
+  ```
+
+Start the FastAPI application:
+  ```bash
+  uvicorn app:app
+  ```
 
 ### Using Docker
 
-#### Build the Docker image:
+Build the Docker image:
 ```bash
 docker build -t chunky:latest .
 ```
 
-#### Run the Docker container:
+Run the Docker container:
 ```bash
 docker run -d -p 8000:8000 chunky:latest
 ```
