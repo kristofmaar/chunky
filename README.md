@@ -61,6 +61,25 @@ Run the Docker container:
 docker run -d -p 8000:8000 chunky:latest
 ```
 
+## Design choices
+
+### Text cleaning
+Based on the articles on Medium and Spotintelligence, I've implemented some basic text cleaning strategies like white space removal, non-printable characters removal, and multiple spaces removal. I've avoided more advanced techniques to maintain text consistency for the chunking.
+
+### Choosing the chunking strategy
+Mainly the articles of unstructured.io and Pinecone, the Reddit comments, and first cited paper infunced my decisions about choosing the chunking strategy and parameters.
+
+The **fixed-size, character-based chunking** would have been too simplistic for the use case, since it might split text in the middle of sentences or important semantic units, leading to chunks that are not meaningful or useful for downstream tasks.
+
+I had to skip most of the **semantic chunking** methods because of the limitation about using LLM's or any Transformer based models. Even though I've found and tested semantic chunking methods/libraries (e.g. NLTK/textsplit/PySBD), they didn't seem to split text as uniformly as recursive chunking.
+
+**Recursive chunking** seemed to perform the best, since it allows for more control over the chunk sizes and ensures that the chunks are semantically meaningful: by recursively splitting the text based on predefined rules (e.g., sentence boundaries, paragraph breaks), we can achieve a balance between chunk size and semantic coherence. This is crucial for text embedding models.
+
+The plots about the distribution of chunk lengths in the Juypter Notebook supports this, therefore I sticked with recursive chunking.
+
+### Chunk size as overlap
+The research materials almost uniformly stated that for a vector embedding use-case a chunk size of 500-1000 and an overlap of 10% of the chunk size could work the most optimal - of course depending on the type of the documents and the embedding model. Therefore, I choose **1024** (which is a power of 2) as the chunk size, and the overlap of **100** as a general solution.
+
 ## Sources
 
 ### Blog posts, articles
