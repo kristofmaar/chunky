@@ -10,4 +10,5 @@ dependencies:
       - uvicorn
       - PyPDF2
       - langchain
-      - nltk 
+      - nltk
+      - python-multipart 

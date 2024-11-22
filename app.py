@@ -1,7 +1,7 @@
 from fastapi import FastAPI, File, UploadFile, HTTPException
 from fastapi.responses import JSONResponse
 from PyPDF2 import PdfReader
-from .chunky import Chunky
+from chunky import Chunky
 
 app = FastAPI()
 

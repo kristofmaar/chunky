@@ -54,6 +54,11 @@ Uploads a PDF file, extracts text from it, cleans the text, and chunks it into s
 
 ## Example usage
 
+### Running the api
+```
+uvicorn app:app
+```
+
 ### Request
 ```bash
 curl -X POST "http://localhost:8000/upload" -H "accept: application/json" -H "Content-Type: multipart/form-data" -F "file=@path/to/your/file.pdf"
