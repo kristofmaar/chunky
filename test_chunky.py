@@ -23,7 +23,7 @@ class TestChunky(unittest.TestCase):
         self.assertGreater(len(chunks), 0)
 
     def test_chunk_pdf_text(self):
-        reader = PdfReader("test_files/gdpr.pdf")
+        reader = PdfReader("test_documents/gdpr.pdf")
         text = ""
         for page in reader.pages:
             text += page.extract_text()
